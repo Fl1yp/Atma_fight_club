@@ -1,0 +1,134 @@
+<style>
+    .work {
+        display: flex;
+        width: 100%;
+        height: auto; /* Изменено на auto для адаптивности */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .list_work {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+        gap: 20%; /* Увеличен зазор между карточками */
+
+    }
+
+    .card {
+        width: 250px; /* Увеличена ширина карточки */
+        height: 350px; /* Увеличена высота карточки */
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        perspective: 800px;
+
+    }
+
+    .cover-image {
+        width: 100%;
+        height: 100%; /* Изображение занимает всю высоту карточки */
+        object-fit: cover;
+    }
+
+    .wrapper {
+        transition: all 0.5s;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .card:hover .wrapper {
+        transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+        box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    }
+
+    .card:active .wrapper {
+        transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+        box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    }
+
+    .title {
+        font-family: "padmaa", sans-serif;
+        text-align: center;
+        color: white;
+        width: 100%;
+        transition: transform 0.5s, color 0.3s;
+        text-decoration: none;
+        padding: 10px 0;
+    }
+
+    .card:hover .title {
+        transform: translate3d(0%, -50px, 100px);
+        color: yellow;
+    }
+
+    .card:active .title {
+        transform: translate3d(0%, -50px, 100px);
+        color: yellow;
+    }
+
+    .character {
+        width: 130%;
+        opacity: 0;
+        transition: all 0.5s;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .card:hover .character {
+        opacity: 1;
+        transform: translate3d(0%, -30%, 100px);
+    }
+
+    .card:active .character {
+        opacity: 1;
+        transform: translate3d(0%, -30%, 100px);
+    }
+
+    /* Медиа-запросы для адаптивности */
+    @media (max-width: 1200px) {
+        .list_work {
+            gap: 10%;
+        }
+    }
+
+    @media (max-width: 850px) {
+        .list_work {
+            gap: 5%;
+            width: 100%;
+
+        }
+
+        .card {
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+
+    }
+</style>
+
+<div class="work">
+    <div class="list_work">
+
+        <div class="card">
+            <div class="wrapper">
+                <img src="/media/fight/trainer/bg_dima.webp" alt="ph" loading="lazy" class="cover-image">
+            </div>
+            <h4 class="title">Дмитрий Купчинский</h4>
+            <img src="/media/fight/trainer/dima.webp" class="character"/>
+        </div>
+
+        <div class="card">
+            <div class="wrapper">
+                <img src="/media/fight/trainer/bg_oleg.webp" alt="ph" loading="lazy" class="cover-image">
+            </div>
+            <h4 class="title">Олег Приходько</h4>
+            <img src="/media/fight/trainer/oleg.webp" class="character"/>
+        </div>
+
+    </div>
+</div>

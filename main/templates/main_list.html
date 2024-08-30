@@ -1,0 +1,83 @@
+<html lang="ru">
+<title>Клуб тайского бокса "АТМА"</title>
+{% extends 'base.html' %}
+{% load random %}
+{% block content %}
+    {% load mediapath %}
+{##}
+{#    {% include "front/loader.html" %}#}
+{##}
+{#    {% include "front/modal_window.html" %}#}
+
+    {% include "front/main_video.html" %}
+
+    <div class="text_un_block">
+        <h1>
+            Дополнительная информация
+        </h1>
+    </div>
+
+    {% include "front/block_info.html" %}
+
+    <div class="text_un_block">
+        <h1>
+            Наши преимущества
+        </h1>
+    </div>
+
+    {% include "front/why_me.html" %}
+
+    <div class="text_un_block" id="trainer">
+        <h1>
+            Наши тренера
+        </h1>
+    </div>
+
+    {% include "front/trainer.html" %}
+
+    <div class="text_un_block" id="photo">
+        <h1>
+            Фото тренировок
+        </h1>
+    </div>
+
+    {% include "front/block_photo.html" %}
+
+    <div class="text_un_block">
+        <h1>
+            ВОПРОС-ОТВЕТ
+        </h1>
+    </div>
+
+    {% include "front/question.html" %}
+
+    <div class="text_un_block">
+        <h1>
+            Расписание
+        </h1>
+    </div>
+
+    {% include "front/schedule.html" %}
+
+    <div class="text_un_block" id="info">
+        <h1>
+            О НАС
+        </h1>
+    </div>
+
+    {% include "front/why_not_me.html" %}
+
+    <div class="text_un_block">
+        <h1>
+            Записаться на тренировку
+        </h1>
+    </div>
+
+
+    {% include "front/free_training.html" %}
+
+    {% include "front/map.html" %}
+
+
+
+{% endblock %}

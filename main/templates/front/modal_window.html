@@ -1,0 +1,175 @@
+<style>
+    #parent_popup {
+        transition: 2s;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        position: fixed;
+        z-index: 99999;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    #popup {
+        transition: 2s;
+        background-color: black;
+        height: 50%;
+        width: 70%;
+        margin: 15% auto;
+        background-position: top left;
+        padding: 5px 20px 13px 20px;
+        border: 10px solid white;
+        border-radius: 20px;
+        position: relative;
+        justify-content: center;
+        display: flex;
+    }
+
+    .close {
+        background-color: firebrick;
+        border: 2px solid firebrick;
+        height: 30px;
+        line-height: 24px;
+        position: absolute;
+        right: -24px;
+        cursor: pointer;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+        top: -24px;
+        width: 24px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        border-radius: 15px;
+        -moz-box-shadow: 1px 1px 3px #000;
+        -webkit-box-shadow: 1px 1px 3px #000;
+        box-shadow: 1px 1px 3px #000;
+    }
+
+    .close:hover {
+        background-color: black;
+    }
+
+    .l_block {
+        z-index: 2;
+        overflow: hidden;
+        width: 50%;
+        height: auto;
+        background-image: url("/media/fight/bg/img_12.webp");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .r_block {
+        width: 50%;
+        color: white;
+        overflow: hidden;
+    }
+
+    .block_ph {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .block_ph img {
+        width: 50%;
+
+    }
+
+    .block_btn {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .order-form {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 70%;
+    }
+
+    .order-form-inputs {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+    }
+
+    .order-form-inputs input {
+        width: 100%;
+        height: 15%;
+        padding: 20px;
+        margin-top: 5%;
+        border-radius: 20px;
+        text-align: center;
+        border: 2px solid orange;
+    }
+
+    .order-form-inputs input:hover {
+        border: 2px solid firebrick;
+    }
+
+    .btn_form {
+        margin-top: 10%;
+        margin-left: 25%;
+        width: 60%;
+        height: 20%;
+        background-color: orange;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    .btn_form:hover {
+        background-color: firebrick;
+        color: white;
+    }
+
+    .no-scroll {
+        overflow: hidden;
+        height: 100%;
+    }
+
+</style>
+
+<div id="parent_popup">
+    <div id="popup">
+        <div class="l_block">
+        </div>
+        <div class="r_block">
+            <div class="block_ph">
+                <img src="/media/fight/Frame%2018.webp" alt="photo">
+            </div>
+            <div class="block_btn">
+                <div class="order-form">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="order-form-inputs">
+                            <div class="order-form-input">
+                                {{ form.as_p }}
+                            </div>
+                            <button type="submit" class="btn_form">
+                                ПЕРЕЗВОНИТЬ
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <a class="close" title="Закрыть" onclick="closeModal();">X</a>
+    </div>
+</div>
+
+
+
+

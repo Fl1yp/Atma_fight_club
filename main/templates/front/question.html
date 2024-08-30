@@ -1,0 +1,25 @@
+
+<section class="block_question">
+    <div class="block_questions_2">
+        <div class="faq">
+            {% for object in question %}
+                <details>
+                    <summary>
+                        {{ object.question }}
+                        <span class="toggle-icon">+</span>
+                    </summary>
+                    <p>{{ object.answer }}.</p>
+                </details>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+document.querySelectorAll('details').forEach(detail => {
+    detail.addEventListener('toggle', () => {
+        const icon = detail.querySelector('.toggle-icon');
+        icon.textContent = detail.open ? '-' : '+';
+    });
+});
+</script>

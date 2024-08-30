@@ -1,0 +1,98 @@
+<style>
+.trainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    color: white;
+
+}
+
+.card_one {
+    width: 100%;
+    grid-area: card_one;
+    height: auto;
+
+}
+
+.card_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    background-color: #011a27;
+    border-radius: 50px;
+    margin-top: 20px;
+    transition: 0.5s;
+    cursor: default;
+}
+
+.card_title:hover {
+    background-color: firebrick;
+    color: white;
+    transition: 0.5s;
+}
+
+.card_two {
+    width: 100%;
+    height: 100%;
+    grid-area: card_two;
+}
+
+.card_free {
+    width: 100%;
+    height: 100%;
+    grid-area: card_free;
+}
+
+.list_card_trainer {
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+                        "card_one card_two card_free"
+                        "card_one card_two card_free"
+                        "card_one card_two card_free";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr;
+    min-height: 40vh;
+    grid-gap: 20px;
+}
+
+.text_un_block {
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+</style>
+<section class="trainer">
+    <div class="work_dir">
+        <div class="list_card_trainer wow animate__animated animate__zoomInUp">
+            <div class="card_one">
+                <div class="card_body">
+                    <img src="/media/fight/trainer/Group%2011.webp" class="ph_trainer" alt="ph" loading="lazy">
+                </div>
+                <div class="card_title">
+                    Купчинский Дмитрий
+                </div>
+            </div>
+            <div class="card_two">
+                <div class="card_title">
+                    Безлимитный абонимент
+                </div>
+                <div class="card_body">
+                    <img src="/media/fight/trainer/Frame%2019.webp" class="ph_trainer" alt="ph" loading="lazy">
+                </div>
+            </div>
+            <div class="card_free">
+
+                <div class="card_body">
+                    <img src="/media/fight/trainer/Group%2010.webp" class="ph_trainer" alt="ph" loading="lazy">
+                </div>
+                <div class="card_title">
+                    Олег Приходько
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

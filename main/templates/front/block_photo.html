@@ -1,0 +1,9 @@
+<section class="photo_work">
+    <div class="work_dir">
+        <div class="list_ph_work wow animate__animated animate__fadeIn">
+            {% for object in photo %}
+                <img src="{{ object.img }}" class="ph_work_train" alt="ph" loading="lazy">
+            {% endfor %}
+        </div>
+    </div>
+</section>
