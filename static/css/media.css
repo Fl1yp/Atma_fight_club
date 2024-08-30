@@ -1,0 +1,238 @@
+
+@media (max-width: 1000px) {
+    .why_text_img img {
+        height: 100%;
+    }
+
+    .list_ph_work {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-gap: 15px 15px;
+    }
+
+    .why_work_zone {
+        grid-template-areas:
+        "why_one why_two"
+        "why_free why_foor"
+        "why_five why_six";
+        grid-template-columns: repeat(2, 1fr); /* Укажите 2 колонки */
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+
+@media (min-width: 1000px) {
+    .why_text_title {
+        font-size: 110%;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .why_text_img img {
+        height: 100%
+    }
+
+    .card_body {
+        height: 75%;
+    }
+}
+
+/*Если меньше*/
+@media (max-width: 800px) {
+    .card_body {
+        grid-gap: 20px;
+        max-height: 60%;
+    }
+}
+
+/*Если больше*/
+
+@media (min-width: 500px) {
+    .container_2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .one {
+        grid-column: 1/3;
+        grid-row: 1/3;
+    }
+
+    .two {
+        grid-column: 1;
+        grid-row: 3/6;
+    }
+
+    .free {
+        grid-column: 1;
+        grid-row: 6;
+    }
+
+    .fhor {
+        grid-column: 2;
+        grid-row: 5/7;
+    }
+}
+
+@media (min-width: 800px) {
+    .container_2 {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: minmax(150px, auto) minmax(150px, auto);
+        grid-auto-rows: minmax(100px, auto);
+    }
+
+
+    .why_text_title {
+        font-size: 100%;
+    }
+
+    .why_text_description {
+        height: auto;
+        width: 80%;
+    }
+
+
+    .one {
+        grid-column: 1;
+        grid-row: 1/6;
+    }
+
+    .two {
+        grid-column: 2;
+        grid-row: 1/4;
+    }
+
+    .free {
+        grid-column: 2;
+        grid-row: 4/6;
+    }
+
+    .fhor {
+        grid-column: 3;
+        grid-row: 3/6;
+    }
+
+
+    .form_form input {
+        font-size: 90%;
+    }
+
+
+}
+
+
+@media (max-width: 700px) {
+    .why_text_title {
+        font-size: 90%;
+    }
+
+    .why_text_description {
+        font-size: 90%;
+    }
+
+    .form_form input {
+        font-size: 70%
+    }
+
+    .list_card_trainer {
+        grid-template-areas:
+                        "card_one "
+                        "card_two "
+                        "card_free ";
+        grid-template-columns: repeat(1, 1.5fr);
+        grid-template-rows: repeat(1, 1.51fr);
+        min-height: 10vh;
+        grid-gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .list_ph_work {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px 10px;
+    }
+
+    .list_card_trainer {
+        min-height: 30%;
+    }
+
+    .card_title {
+        height: 15%;
+    }
+
+    .konf {
+        font-size: 7px;
+    }
+
+    .brns {
+        width: auto
+    }
+
+    .why_text h1 {
+    }
+
+    .why_text h2 {
+        font-size: 20px;
+    }
+
+    .work_main_menu a {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    .why_work_zone {
+        grid-template-areas:
+            "why_one "
+            "why_two"
+            "why_free "
+            "why_foor"
+            "why_five "
+            "why_six";
+        grid-template-columns: repeat(1, 1fr); /* Укажите 2 колонки */
+        grid-template-rows: repeat(1, 1fr);
+    }
+
+    .work_main_menu a {
+        font-size: 60%;
+    }
+
+    .why_text {
+        width: 70%;
+        height: 70%;
+    }
+
+    .text_work_training h1 {
+        text-align: center;
+    }
+
+    .text_work_training h4 {
+        text-align: center;
+    }
+
+    .photo_anim:hover {
+        transform: scale(1.1);
+
+    }
+
+    .photo_anim:active {
+        transform: scale(0.95);
+
+    }
+}
+
+@media (max-width: 400px) {
+    .why_text {
+        width: 90%;
+        height: 90%;
+    }
+
+
+    .form_form input {
+        width: 90%;
+        font-size: 50%;
+        gap: 5px;
+    }
+
+}

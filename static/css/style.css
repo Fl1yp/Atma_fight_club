@@ -1,0 +1,784 @@
+html {
+    min-width: 400px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black
+}
+
+.center {
+    display: flex;
+}
+
+@font-face {
+    font-family: 'rametto';
+    src: url("/media/fight/font/ofont.ru_Rammetto One.ttf");
+}
+
+@font-face {
+    font-family: 'delabba';
+    src: url("/media/fight/font/ofont.ru_Deledda.ttf");
+}
+
+
+@font-face {
+    font-family: 'strogi';
+    src: url("/media/fight/font/StrogiyDemo-A-Black.otf");
+}
+
+
+video {
+    filter: brightness(20%);
+    position: relative; /* Убедитесь, что родительский элемент имеет относительное позиционирование */
+    width: 100%;
+    height: auto; /* Добавлено для лучшего контроля размера */
+}
+
+.main_block_video {
+    position: relative; /* Позволяет использовать абсолютное позиционирование для дочерних элементов */
+    width: 100%;
+    height: auto; /* Добавлено для лучшего контроля размера */
+}
+
+.pic_main {
+    position: absolute; /* Абсолютное позиционирование для наложения на видео */
+    top: 50%; /* Центрирование по вертикали */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translate(-50%, -50%); /* Центрирование с учетом размеров изображения */
+    width: 40%; /* Измените размер изображения по необходимости */
+    height: auto; /* Сохраняет пропорции изображения */
+    pointer-events: none; /* Отключает взаимодействие с изображением, чтобы клики проходили на видео */
+    background: none;
+}
+
+
+.text_un_block h1 {
+    font-family: "strogi", sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.main_video {
+    width: 100%;
+}
+
+.main_menu {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: start;
+
+}
+
+.work_main_menu {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.work_main_menu a {
+    margin-left: auto;
+    font-family: "rametto", sans-serif;
+    text-decoration: none;
+    font-size: 100%;
+    width: auto;
+    height: auto;
+    color: white;
+}
+
+.work_main_menu a:hover {
+    color: firebrick;
+    cursor: pointer;
+}
+
+.work_main_menu a:active {
+    color: firebrick;
+    cursor: pointer;
+}
+
+.main_menu_ph {
+    width: 50px;
+    height: auto;
+}
+
+.fight_block {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/media/fight/bg/img_bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: black;
+
+}
+
+.work_dir {
+    height: auto;
+    display: flex;
+    width: 1200px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container_2 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(150px, auto);
+
+}
+
+.container_2 h3 {
+    margin-top: auto;
+    text-align: center;
+    color: firebrick;
+    font-family: 'rametto', sans-serif;
+
+}
+
+.container_2 p {
+    font-family: 'delabba', sans-serif;
+}
+
+.container_2 p {
+    padding: 10px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+
+.one {
+    background-image: url("/media/fight/info/img.webp");
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.two {
+    background-image: url("/media/fight/info/img_1.webp");
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+
+.free {
+    background-image: url("/media/fight/info/img_3.webp");
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+}
+
+.fhor {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-image: url("/media/fight/info/img_2.webp");
+
+}
+
+.five {
+    background-image: url("/media/fight/info/img_4.webp");
+    color: white;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.six {
+    background-size: cover;
+    background-image: url("/media/fight/info/img_5.webp");
+    background-position: top;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+
+.photo_anim {
+    position: relative; /* Устанавливаем относительное позиционирование для родителя */
+    overflow: hidden; /* Скрываем выходящие за пределы элементы */
+    transition: transform 1s, z-index 0s; /* Плавный переход для трансформации */
+    cursor: pointer;
+    z-index: 1; /* Начальный z-index */
+}
+
+.photo_anim::after {
+    content: ""; /* Создаем пустой контент для псевдоэлемента */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Задаем верхнюю границу */
+    left: 0; /* Задаем левую границу */
+    right: 0; /* Задаем правую границу */
+    bottom: 0; /* Задаем нижнюю границу */
+    background-color: rgba(0, 0, 0, 0.5); /* Черный цвет с прозрачностью */
+    opacity: 0; /* Начальная непрозрачность */
+    transition: opacity 0.5s; /* Плавный переход для opacity */
+}
+
+.photo_anim:hover::after {
+    opacity: 1; /* Затемняем фон при наведении */
+}
+
+.photo_anim:active::after {
+    opacity: 1; /* Затемняем фон при наведении */
+}
+
+.photo_anim p {
+    opacity: 0; /* Делаем текст невидимым по умолчанию */
+    transition: opacity 0.5s; /* Плавный переход для opacity */
+    color: white; /* Цвет текста, измените при необходимости */
+}
+
+.photo_anim:hover p {
+    opacity: 1;
+    z-index: 10;
+}
+
+
+.photo_anim:active p {
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.photo_anim:active p {
+    opacity: 1; /* Делаем текст видимым при наведении */
+}
+
+.photo_anim h3 {
+    opacity: 0; /* Делаем текст невидимым по умолчанию */
+    transition: opacity 0.5s; /* Плавный переход для opacity */
+}
+
+.photo_anim:active h3 {
+    z-index: 10;
+    opacity: 1; /* Делаем текст видимым при наведении */
+}
+
+.photo_anim:hover h3 {
+    z-index: 10;
+    opacity: 1; /* Делаем текст видимым при наведении */
+}
+
+.photo_anim:hover {
+    transform: scale(1.2);
+    transition: 1s;
+    z-index: 10
+}
+
+.photo_anim:active {
+    transform: scale(1.2);
+    transition: 1s;
+    z-index: 10
+}
+
+
+.sett_bg {
+    color: white;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+
+}
+
+.text_un_block {
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+
+.photo_work {
+    width: 100%;
+    height: auto;
+    background-image: url("/media/fight/bg/img_6.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    background-attachment: fixed;
+    justify-content: center;
+    background-size: cover;
+}
+
+.list_ph_work {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px 30px;
+}
+
+.ph_work_train {
+    width: 100%;
+    height: 200px;
+    transition: 0.5s;
+    background-color: #bebebe;
+
+}
+
+.ph_work_train:hover {
+
+    transform: scale(1.5);
+}
+
+.ph_work_train:active {
+
+    transform: scale(1.5);
+}
+
+.card_body {
+    width: 100%;
+    height: 80%;
+}
+
+.ph_trainer {
+    width: 100%;
+    height: 100%;
+}
+
+
+.why_not_me {
+    position: relative; /* Устанавливаем относительное позиционирование для родителя */
+    width: 100%;
+    height: 90vh;
+    overflow: hidden; /* Скрываем все, что выходит за пределы контейнера */
+}
+
+.why_not_me_bg {
+    background-image: url("/media/fight/bg/img_12.webp");
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Обеспечиваем, чтобы изображение заполняло весь контейнер */
+    background-position: center; /* Центрируем изображение */
+}
+
+.why_not_me_bg::after {
+    content: ""; /* Создаем пустой контент для псевдоэлемента */
+    position: absolute; /* Абсолютное позиционирование для наложения */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный цвет */
+    z-index: 1; /* Устанавливаем z-index, чтобы затемнение было выше изображения */
+}
+
+.block_why {
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    height: 100%; /* Задаем высоту, чтобы занять всю высоту родителя */
+    position: relative; /* Устанавливаем относительное позиционирование */
+    z-index: 2; /* Устанавливаем z-index выше, чем у псевдоэлемента */
+}
+
+.why_text {
+    width: 50%;
+    height: 50%;
+    color: white;
+    align-content: center;
+}
+
+.why_text h1 {
+    font-family: "rametto", sans-serif;
+}
+
+.why_text h2 {
+    width: 80%;
+    font-family: "delabba", sans-serif;
+}
+
+.free_training {
+    width: 100%;
+    height: auto;
+    background-color: #bebebe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_work_training h1 {
+    font-family: "delabba", sans-serif;
+}
+
+.text_work_training h4 {
+    font-family: "delabba", sans-serif;
+}
+
+.work_training {
+    width: 100%;
+    height: auto;
+}
+
+.text_work_training {
+    width: 100%;
+    height: auto;
+}
+
+.text_work_training h1 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.text_work_training h4 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.button_work_training {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.konf {
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+.form_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 200px;
+    gap: 10px;
+
+}
+
+.form_form input {
+    width: 25%;
+    height: 30%;
+    text-align: center;
+    border-radius: 20px;
+    border: none;
+    font-size: 100%;
+}
+
+.brns {
+    border: none;
+    width: 15%;
+    height: 25%;
+    border-radius: 20px;
+    background-color: orangered;
+    transition: 0.5s;
+}
+
+.brns:hover {
+    background-color: orange;
+    transition: 0.5s;
+    color: white;
+    cursor: pointer;
+}
+
+.brns:active {
+    background-color: orange;
+    transition: 0.5s;
+    color: white;
+    cursor: pointer;
+}
+
+
+.text_work_training h4 {
+    color: white;
+}
+
+.map_info {
+    width: 100%;
+    display: flex;
+
+}
+
+.block_map {
+    width: 50%;
+    height: auto;
+
+
+}
+
+.map_adn_info {
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+
+#map {
+    width: 50%;
+    height: auto;
+}
+
+
+.text_map {
+    width: 50%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text_map_work {
+    width: 85%;
+    height: 85%;
+    color: white;
+    font-family: "strogi", sans-serif;
+}
+
+.text_map_work_1 {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 25%;
+}
+
+.text_map_work_2 {
+    align-items: center;
+    width: auto;
+    height: 25%;
+}
+
+.text_map_work_3 {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 25%;
+}
+
+.text_map_work_4 {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 25%;
+}
+
+.small_svg {
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    border-radius: 20px;
+    margin-left: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.small_svg:hover {
+    background-color: firebrick;
+    transition: 0.5s;
+}
+
+.small_svg:active {
+    background-color: firebrick;
+    transition: 0.5s;
+}
+
+.why_me {
+    width: 100%;
+    height: auto; /* Измените на auto, чтобы адаптироваться к содержимому */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.why_work_zone {
+    margin-top: 1%;
+    width: 80%;
+    display: grid;
+    grid-template-areas:
+        "why_one why_two why_free"
+        "why_foor why_five why_six";
+    grid-template-columns: repeat(3, 1fr); /* Упрощение записи */
+    grid-template-rows: auto; /* Высота строк будет зависеть от содержимого */
+    min-height: 50vh; /* Минимальная высота блока */
+    grid-gap: 50px;
+}
+
+.why_one,
+.why_two,
+.why_free,
+.why_foor,
+.why_five,
+.why_six {
+    width: 100%; /* Занимайте всю ширину ячейки сетки */
+    min-height: 150px; /* Минимальная высота карточек для лучшего отображения */
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+.why_one:hover,
+.why_two:hover,
+.why_free:hover,
+.why_foor:hover,
+.why_five:hover,
+.why_six:hover {
+    background-color: white;
+    transition: 0.5s;
+    color: black;
+    box-shadow: 15px -16px firebrick;
+}
+
+.why_one:active,
+.why_two:active,
+.why_free:active,
+.why_foor:active,
+.why_five:active,
+.why_six:active {
+    background-color: white;
+    transition: 0.5s;
+    color: black;
+    box-shadow: 15px -16px firebrick;
+}
+
+.why_text_img {
+    width: 100%;
+    height: auto; /* Измените на auto, чтобы адаптироваться к содержимому */
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.why_text_img img {
+    margin-left: 10%;
+    width: 11%;
+    height: auto; /* Убедитесь, что изображение сохраняет пропорции */
+    fill: white;
+    filter: brightness(0) saturate(100%) invert(100%); /* Измените фильтр на нужный вам цвет */
+}
+
+.why_one:hover .why_text_img img,
+.why_two:hover .why_text_img img,
+.why_free:hover .why_text_img img,
+.why_foor:hover .why_text_img img,
+.why_five:hover .why_text_img img,
+.why_six:hover .why_text_img img {
+    filter: brightness(0) saturate(100%) invert(0); /* Измените фильтр на нужный вам цвет */
+}
+
+.why_one:active .why_text_img img,
+.why_two:active .why_text_img img,
+.why_free:active .why_text_img img,
+.why_foor:active .why_text_img img,
+.why_five:active .why_text_img img,
+.why_six:active .why_text_img img {
+    filter: brightness(0) saturate(100%) invert(0); /* Измените фильтр на нужный вам цвет */
+}
+
+.why_text_title {
+    margin-top: 2%;
+    margin-left: 10%;
+    width: 90%;
+    height: auto; /* Измените на auto */
+    display: flex;
+    font-size: 130%;
+    align-items: center;
+}
+
+.why_text_description {
+    margin-top: 2%;
+    margin-left: 10%;
+    width: 90%;
+    height: auto; /* Измените на auto */
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    font-family: "delabba", sans-serif;
+    font-size: 120%;
+}
+
+.me {
+    font-family: "padmaa", sans-serif;
+    color: white;
+    height: auto;
+    text-align: start;
+    font-size: 10px;
+    margin-right: 40px;
+}
+
+.block_question {
+    margin: auto;
+    width: 90%;
+}
+
+.block_questions_2 {
+    margin: auto;
+    width: 80%;
+}
+
+.faq {
+    width: 100%;
+
+}
+
+details {
+    margin: auto;
+    width: 80%;
+    margin-top: 2%;
+    background-color: white;
+    border-radius: 4px;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    transition: background-color 0.3s ease; /* Плавный переход для фона */
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    display: flex; /* Используем flexbox для выравнивания */
+    justify-content: space-between; /* Размещаем элементы по краям */
+    align-items: center; /* Центрируем по вертикали */
+    list-style: none; /* Убирает стандартный маркер */
+}
+
+summary::-webkit-details-marker {
+    display: none; /* Скрывает стрелку в WebKit-браузерах */
+}
+
+.toggle-icon {
+    font-size: 150%;
+    margin-left: 10px; /* Отступ между текстом и иконкой */
+    transition: transform 0.3s ease; /* Плавный переход для вращения */
+}
+
+details[open] .toggle-icon {
+    transform: rotate(45deg); /* Вращаем на 45 градусов при открытом состоянии */
+}
+
+details[open] {
+    background-color: #eef;
+
+}
+
+/* Добавление анимации для плавного открытия и закрытия */
+details > p {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease; /* Плавный переход для высоты */
+}
+
+details[open] > p {
+    max-height: 350px; /* Установите максимальную высоту для анимации */
+}
