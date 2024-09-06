@@ -98,12 +98,7 @@ video {
     color: white;
 }
 
-.work_main_menu a:hover {
-    color: firebrick;
-    cursor: pointer;
-}
-
-.work_main_menu a:active {
+.work_main_menu a:hover,.work_main_menu a:active  {
     color: firebrick;
     cursor: pointer;
 }
@@ -280,18 +275,11 @@ video {
     opacity: 1; /* Делаем текст видимым при наведении */
 }
 
-.photo_anim:hover {
+.photo_anim:hover,.photo_anim:active {
     transform: scale(1.2);
     transition: 1s;
     z-index: 10
 }
-
-.photo_anim:active {
-    transform: scale(1.2);
-    transition: 1s;
-    z-index: 10
-}
-
 
 .sett_bg {
     color: white;
@@ -334,12 +322,7 @@ video {
 
 }
 
-.ph_work_train:hover {
-
-    transform: scale(1.5);
-}
-
-.ph_work_train:active {
+.ph_work_train:hover,.ph_work_train:active {
 
     transform: scale(1.5);
 }
@@ -489,20 +472,12 @@ video {
     transition: 0.5s;
 }
 
-.brns:hover {
+.brns:hover,.brns:active {
     background-color: orange;
     transition: 0.5s;
     color: white;
     cursor: pointer;
 }
-
-.brns:active {
-    background-color: orange;
-    transition: 0.5s;
-    color: white;
-    cursor: pointer;
-}
-
 
 .text_work_training h4 {
     color: white;
@@ -585,15 +560,11 @@ video {
     cursor: pointer;
 }
 
-.small_svg:hover {
+.small_svg:hover,.small_svg:active {
     background-color: firebrick;
     transition: 0.5s;
 }
 
-.small_svg:active {
-    background-color: firebrick;
-    transition: 0.5s;
-}
 
 .why_me {
     width: 100%;
@@ -634,14 +605,7 @@ video {
 .why_free:hover,
 .why_foor:hover,
 .why_five:hover,
-.why_six:hover {
-    background-color: white;
-    transition: 0.5s;
-    color: black;
-    box-shadow: 15px -16px firebrick;
-}
-
-.why_one:active,
+.why_six:hover, .why_one:active,
 .why_two:active,
 .why_free:active,
 .why_foor:active,
@@ -674,11 +638,7 @@ video {
 .why_free:hover .why_text_img img,
 .why_foor:hover .why_text_img img,
 .why_five:hover .why_text_img img,
-.why_six:hover .why_text_img img {
-    filter: brightness(0) saturate(100%) invert(0); /* Измените фильтр на нужный вам цвет */
-}
-
-.why_one:active .why_text_img img,
+.why_six:hover .why_text_img img, .why_one:active .why_text_img img,
 .why_two:active .why_text_img img,
 .why_free:active .why_text_img img,
 .why_foor:active .why_text_img img,
